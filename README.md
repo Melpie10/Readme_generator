@@ -33,6 +33,7 @@ In order to use:
 Videos on how to run this Readme Generator can be found here: https://drive.google.com/file/d/1GlWQ1woM3Rbkjaa-E18eIWBjn-puD9Ya/view
 
 
+![Screen Shot 2022-03-24 at 4 18 46 PM](https://user-images.githubusercontent.com/92319522/160003157-31f2c1c9-92cd-4c17-addc-2fc6d66da7ec.png)
 
 
 
