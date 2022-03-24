@@ -82,7 +82,7 @@ const promptUser = () => {
 async function init() {
     try {
         // Ask user questions and generate responses
-        const answers = await promptUser();
+        const data = await promptUser();
         const generateContent = generateReadme(answers);
         // Write new README.md to dist directory
         await writeFileAsync('./dist/README.md', generateContent);
