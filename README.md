@@ -20,11 +20,7 @@ WHEN I click on the links in the Table of Contents
 THEN I am taken to the corresponding section of the README
 
 # Installation
-run 'npm install' to download the needed packages, and run the application in your terminal/console.
-
-
-## Access
-This README Generator's code can be accessed from my github, on the repository: https://github.com/Melpie10/Readme_generator
+Run 'npm install' to download the needed packages, and run the application in your terminal/console.
 
 # Usage
 
@@ -33,6 +29,15 @@ In order to use:
 2. Answer prompts
 3. Find your created Readme File on the dist folder.
 
+## Visuals
+Videos on how to run this Readme Generator can be found here: https://drive.google.com/file/d/1GlWQ1woM3Rbkjaa-E18eIWBjn-puD9Ya/view
+
+
+
+
+
+## Access
+This README Generator's code can be accessed from my github, on the repository: https://github.com/Melpie10/Readme_generator
 
 ## Contributing
 
