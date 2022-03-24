@@ -1,7 +1,8 @@
-const fs = require('fs');
+// const fs = require('fs');
 
 // // TODO: Create a function that returns a license badge based on which license is passed in
 // // If there is no license, return an empty string
+
 const renderLicenseBadge = license => {
   if (license === 'MIT') {
     return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
@@ -43,21 +44,22 @@ const renderLicenseSection = license => {
   } else {
     return `
   ## License
-   
   This application is covered under the ${renderLicenseLink(license)} license.
     `;
   };
 };
 
 // TODO: Create a function to generate markdown for README
-module.exports = generateMarkdown => {
-  const data = generateMarkdown;
+function generateMarkdown(data) {
 
-  console.log(data);
   return `# ${data.title}
-  
+  ${renderLicenseBadge(data.license)} 
+  ${renderLicenseLink(data.license)}
+
+
   ## Description
   ${data.description}
+
   ## Table of Contents
   * [Installations](#installation)
   * [Usage](#usage)
@@ -65,25 +67,32 @@ module.exports = generateMarkdown => {
   * [Test](#test)
   * [Github Username](#username)
   * [License](#license)
+  
   ## Installation
   ${data.installation}
+  
   ## Usage
   ${data.usage}
+  
   ## Contributions
   ${data.contributionGuidelines}
+  
   ## Test
   ${data.test}
+  
   ##Github Username
   ${data.username}
-  ## License
-  ${data.license}
-  This repository follows an ${data.license} . 
+  
+  ##${data.license}
+  This repository follows ${data.license} license.
+   
+
   ## Questions
   If you have any questions, please contact me at ${data.email}
 
 `;
 };
 
-// module.exports = generateReadme;
+ module.exports = generateMarkdown;
 
 

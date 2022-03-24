@@ -1,8 +1,8 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('utils/generateMarkdown.js');
-const writeFileAsync = util.promisify(fs.writeFile);
+const generateMarkdown = require('./utils/generateMarkdown.js');
+
 
 // TODO: Create an array of questions for user input
 const promptUser = () => {
@@ -83,9 +83,13 @@ async function init() {
     try {
         // Ask user questions and generate responses
         const data = await promptUser();
-        const generateContent = generateReadme(answers);
+        // console.log("data", data)
+
+        const generateContent = generateMarkdown(data);
+        // console.log("generateContent", generateContent)
+
         // Write new README.md to dist directory
-        await writeFileAsync('./dist/README.md', generateContent);
+        await writeToFile(generateContent);
         console.log('Successfully wrote to README.md, check teh dist folder');
     }   catch(err) {
         console.log(err);
@@ -93,21 +97,22 @@ async function init() {
 }
 
 // // // TODO: Create a function to write README file
-// const writeToFile = fileContent => {
-//     return new Promise((resolve, reject) => {
-//         fs.writeFile('./dist/README.md', fileContent, err => {
-//             if (err) {
-//                 reject(err);
-//                 return;
-//             }
 
-//             resolve({
-//                 ok: true,
-//                 message: 'File created, check the dist folder!'
-//             });
-//         });
-//     });
-// };
+const writeToFile = fileContent => {
+    return new Promise((resolve, reject) => {
+        fs.writeFile('./dist/README.md', fileContent, err => {
+            if (err) {
+                reject(err);
+                return;
+            }
+
+            resolve({
+                ok: true,
+                message: 'File created, check the dist folder!'
+            });
+        });
+    });
+};
 
 
 // // TODO: Create a function to initialize app
